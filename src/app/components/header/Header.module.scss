@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  height: 58px;
+  margin-top: 32px;
+}
+
+.logo,
+.authorization {
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-left: 126px;
+  margin-right: auto;
+}
+
+.authorization {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.welcome {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from 'src/app/logic/layout/Layout.module.scss';
+import { Header } from 'src/app/components/header/Header';
 
 /**
  * Layout component
@@ -11,9 +12,9 @@ export const Layout: React.FC = () => {
 
   return (
     <div className={WRAPPER_STYLES}>
-      <header>Header</header>
+      <Header />
       <aside>
-         <nav>Navigation</nav>
+        <nav>Navigation</nav>
       </aside>
       <main className={MAIN_STYLES}>
         <section>Section</section>
