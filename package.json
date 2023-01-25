@@ -38,7 +38,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-unicorn": "^44.0.2",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
     "prettier-eslint": "^14.0.2",
@@ -46,9 +45,12 @@
     "start-server-and-test": "^1.14.0",
     "stylelint": "^14.8.1",
     "stylelint-config-standard": "^29.0.0",
-    "stylelint-prettier": "^2.0.0"
+    "stylelint-prettier": "^2.0.0",
+    "sass": "^1.56.1"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
+    "typescript": "^4.9.3",
     "mochawesome": "^7.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
