@@ -1,6 +1,6 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import clsx from 'clsx';
-import { Card } from 'src/app/components/card/Card';
 
 import styles from 'src/app/logic/layout/Layout.module.scss';
 
@@ -12,9 +12,7 @@ export const MainLayout: React.FC = () => {
 
   return (
     <main className={MAIN_STYLES}>
-      <section>Section
-         <Card />
-      </section>
+      <Outlet />
     </main>
   );
 };
