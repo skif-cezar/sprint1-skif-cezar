@@ -17,8 +17,8 @@ export const Navigation: React.FC = () => {
     <div className={NAVIGATION_STYLES}>
       <Search />
       <FilterButton />
-      <button className={BUTTON_TILE_STYLES} type='button' aria-label='Плитка' />
-      <button className={BUTTON_LIST_STYLES} type='button' aria-label='Список' />
+      <button className={BUTTON_TILE_STYLES} type='button' aria-label='Плитка' data-test-id='button-menu-view-window' />
+      <button className={BUTTON_LIST_STYLES} type='button' aria-label='Список' data-test-id='button-menu-view-list' />
     </div>
   );
 };

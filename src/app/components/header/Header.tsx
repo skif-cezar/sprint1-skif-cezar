@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import avatarSrc from 'src/resources/avatar.jpg';
 import logoSrc from 'src/resources/logo.png';
@@ -18,9 +19,9 @@ export const Header: React.FC = () => {
 
   return (
     <header className={HEADER_STYLES}>
-      <a className={LOGO_STYLES}>
+      <NavLink to='/' className={LOGO_STYLES}>
         <img src={logoSrc} alt='Логотип сайта Cleverland' width={165} height={40} />
-      </a>
+      </NavLink>
       <h1 className={TITLE_STYLES}>Библиотека</h1>
       <div className={AUTHORIZATION_STYLES}>
         <span className={WELCOME_STYLES}>Привет, Иван!</span>
