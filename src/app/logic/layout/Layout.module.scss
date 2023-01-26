@@ -1,16 +1,26 @@
 .wrapper {
   position: relative;
-  display: flex;
   width: 100%;
   max-width: 1110px;
   min-height: 100%;
-  flex-direction: column;
   margin: 0 auto;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 279px 825px;
+  grid-template-rows: 90px 100px 1fr 56px;
+  gap: 0px 6px;
+  grid-template-areas:
+    'header header'
+    'menu navigation'
+    'menu main'
+    'footer footer';
 }
 
 .main {
-  display: flex;
-  flex: 1 1 auto;
-  flex-wrap: wrap;
+  grid-area: main;
+  width: 825px;
+}
+
+.footer {
+  grid-area: footer;
 }
