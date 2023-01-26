@@ -8,6 +8,16 @@ import MenuListDTO from 'src/app/MenuList.json';
 import styles from 'src/app/components/menu/Menu.module.scss';
 
 /**
+ * Interface data
+ */
+interface MenuListInterface {
+  id: number;
+  title: string;
+  amount?: number;
+  url: string;
+}
+
+/**
  * Menu component
  */
 export const Menu: React.FC = () => {
@@ -29,9 +39,9 @@ export const Menu: React.FC = () => {
         </li>
         <ul className={SUB_LIST_STYLES}>
           {MenuListDTO &&
-            MenuListDTO.map((list) => (
+            MenuListDTO.map((list: MenuListInterface) => (
               <li key={list.id} className={SUB_ITEM_STYLES}>
-                <NavLink to='/' className={SUB_LINK_STYLES}>
+                <NavLink to={`/books/${list.url}`} className={SUB_LINK_STYLES}>
                   <span>{list.title}</span>&nbsp;<small>{list.amount}</small>
                 </NavLink>
               </li>

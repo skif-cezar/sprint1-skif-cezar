@@ -1,4 +1,6 @@
 .navigation {
   margin-top: 62px;
   grid-area: navigation;
+  display: flex;
+  flex-direction: row;
 }

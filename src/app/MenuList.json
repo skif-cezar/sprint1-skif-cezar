@@ -1,76 +1,91 @@
 [
    {
       "id": 1,
-      "title": "Все книги"
+      "title": "Все книги",
+      "url": "all"
    },
    {
       "id": 2,
       "title": "Бизнес-книги",
-      "amount": 14
+      "amount": 14,
+      "url": "business"
    },
    {
       "id": 3,
       "title": "Детективы",
-      "amount": 8
+      "amount": 8,
+      "url": "detectives"
    },
    {
       "id": 4,
       "title": "Детские книги",
-      "amount": 14
+      "amount": 14,
+      "url": "children"
    },
    {
       "id": 5,
       "title": "Зарубежная литература",
-      "amount": 2
+      "amount": 2,
+      "url": "foreign"
    },
    {
       "id": 6,
       "title": "История",
-      "amount": 5
+      "amount": 5,
+      "url": "history"
    },
    {
       "id": 7,
       "title": "Классическая литература",
-      "amount": 12
+      "amount": 12,
+      "url": "classical"
    },
    {
       "id": 8,
       "title": "Книги по психологии",
-      "amount": 11
+      "amount": 11,
+      "url": "psychology"
    },
    {
       "id": 9,
       "title": "Компьютерная литература",
-      "amount": 54
+      "amount": 54,
+      "url": "computer"
    },
    {
       "id": 10,
       "title": "Культура и искусство",
-      "amount": 5
+      "amount": 5,
+      "url": "art"
    },
    {
       "id": 11,
       "title": "Наука и образование",
-      "amount": 2
+      "amount": 2,
+      "url": "science"
    },
    {
       "id": 12,
       "title": "Публицистическая литература",
-      "amount": 0
+      "amount": 0,
+      "url": "journalistic"
    },
    {
       "id": 13,
       "title": "Справочники",
-      "amount": 10
+      "amount": 10,
+      "url": "directory"
    },
    {
       "id": 14,
       "title": "Фантастика",
-      "amount": 12
+      "amount": 12,
+      "url": "fantasy"
    },
    {
       "id": 15,
       "title": "Юмористическая литература",
-      "amount": 8
+      "amount": 8,
+      "url": "humorous"
    }
 ]
