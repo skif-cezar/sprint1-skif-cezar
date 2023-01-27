@@ -16,6 +16,12 @@
     'footer footer';
 }
 
+.main {
+  grid-area: main;
+  width: 825px;
+  margin-top: 32px;
+}
+
 .footer {
   grid-area: footer;
 }

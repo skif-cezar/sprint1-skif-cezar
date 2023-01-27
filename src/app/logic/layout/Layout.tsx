@@ -12,6 +12,7 @@ import styles from 'src/app/logic/layout/Layout.module.scss';
  */
 export const Layout: React.FC = () => {
   const WRAPPER_STYLES = clsx(styles.wrapper);
+  const MAIN_STYLES = clsx(styles.main);
   const FOOTER_STYLES = clsx(styles.footer);
 
   return (
@@ -19,7 +20,9 @@ export const Layout: React.FC = () => {
       <Header />
       <Menu />
       <Navigation />
-      <MainLayout />
+      <main className={MAIN_STYLES}>
+        <MainLayout />
+      </main>
       <footer className={FOOTER_STYLES}>Footer</footer>
     </div>
   );
