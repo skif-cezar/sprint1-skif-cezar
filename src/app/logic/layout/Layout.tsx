@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { Header } from 'src/app/components/header/Header';
 import { Menu } from 'src/app/components/menu/Menu';
 import { Navigation } from 'src/app/components/navigation/Navigation';
+import { Footer } from 'src/app/logic/footer/Footer';
 import { MainLayout } from 'src/app/logic/main/MainLayout';
 
 import styles from 'src/app/logic/layout/Layout.module.scss';
@@ -13,7 +14,6 @@ import styles from 'src/app/logic/layout/Layout.module.scss';
 export const Layout: React.FC = () => {
   const WRAPPER_STYLES = clsx(styles.wrapper);
   const MAIN_STYLES = clsx(styles.main);
-  const FOOTER_STYLES = clsx(styles.footer);
 
   return (
     <div className={WRAPPER_STYLES}>
@@ -23,7 +23,7 @@ export const Layout: React.FC = () => {
       <main className={MAIN_STYLES}>
         <MainLayout />
       </main>
-      <footer className={FOOTER_STYLES}>Footer</footer>
+      <Footer />
     </div>
   );
 };
