@@ -14,7 +14,7 @@ export interface BooksInterface {
   author: string;
   year: string;
   url: string;
-  raiting: string;
+  rating: string;
   booking: string;
 }
 
@@ -22,11 +22,12 @@ export interface BooksInterface {
  * Content window component
  */
 export const ContentWindow: React.FC = () => {
-  const CONTAINER_STYLES = clsx(styles.container);
+  // const CONTAINER_STYLES = clsx(styles.container);
+  const CONTAINER_LIST_STYLES = clsx(styles.container_list);
   const TITLE_HIDDEN_STYLES = clsx(styles.hidden);
 
   return (
-    <section className={CONTAINER_STYLES}>
+    /* <section className={CONTAINER_STYLES}>
       <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
       {BooksDTO &&
         BooksDTO.map((book: BooksInterface) => (
@@ -36,10 +37,25 @@ export const ContentWindow: React.FC = () => {
             author={book.author}
             year={book.year}
             url={book.url}
-            raiting={book.raiting}
+            rating={book.rating}
             booking={book.booking}
           />
         ))}
-    </section>
+    </section> */
+    <section className={CONTAINER_LIST_STYLES}>
+    <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
+    {BooksDTO &&
+      BooksDTO.map((book: BooksInterface) => (
+        <Card
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          year={book.year}
+          url={book.url}
+          rating={book.rating}
+          booking={book.booking}
+        />
+      ))}
+  </section>
   );
 };

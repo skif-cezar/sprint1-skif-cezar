@@ -5,7 +5,7 @@
       "author": "Адитья Бхаргава",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "",
+      "rating": "",
       "booking": ""
    },
    {
@@ -14,7 +14,7 @@
       "author": "Адитья Бхаргава",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    },
    {
@@ -23,7 +23,7 @@
       "author": "Адитья Бхаргава",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": "03.05"
    },
    {
@@ -32,7 +32,7 @@
       "author": "Адитья Бхаргава",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    },
    {
@@ -41,7 +41,7 @@
       "author": "Адитья Бхаргава, Патрик Нимейер",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    },
    {
@@ -50,7 +50,7 @@
       "author": "Адитья Бхаргава, Патрик Нимейер",
       "year": "2019",
       "url": "",
-      "raiting": "",
+      "rating": "",
       "booking": "23.04"
    },
    {
@@ -59,7 +59,7 @@
       "author": "Адитья Бхаргава, Патрик Нимейер",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    },
    {
@@ -68,7 +68,7 @@
       "author": "Адитья Бхаргава, Патрик Нимейер",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    },
    {
@@ -77,7 +77,7 @@
       "author": "Адитья Бхаргава",
       "year": "2019",
       "url": "/src/resources/book.jpg",
-      "raiting": "4",
+      "rating": "4",
       "booking": ""
    }
 ]
