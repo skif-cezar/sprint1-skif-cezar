@@ -7,7 +7,7 @@ $hover: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
   flex-direction: row;
 }
 
-.button_tile,
+.button_window,
 .button_list {
   position: relative;
   width: 38px;
@@ -20,11 +20,11 @@ $hover: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
   cursor: pointer;
 }
 
-.button_tile {
+.button_window {
   margin-right: 16px;
 }
 
-.button_tile::before {
+.button_window::before {
   position: absolute;
   top: 9.5px;
   left: 9.5px;
@@ -50,11 +50,10 @@ $hover: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
   mask-image: url('../../../resources/icon-list-btn.svg');
 }
 
-.button_tile:hover::before,
-.button_list:hover::before {
+.button_window.active::before,
+.button_list.active::before {
   background-color: #ffffff;
 }
-.button_tile:hover,
-.button_list:hover {
+.active {
   background: $hover;
 }

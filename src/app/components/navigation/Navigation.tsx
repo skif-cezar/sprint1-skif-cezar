@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import clsx from 'clsx';
 import { FilterButton } from 'src/app/components/filter/FilterButton';
 import { Search } from 'src/app/components/search/Search';
+import { BookContext, StoreInterface } from 'src/app/logic/Store';
 
 import styles from 'src/app/components/navigation/Navigation.module.scss';
 
@@ -10,15 +11,36 @@ import styles from 'src/app/components/navigation/Navigation.module.scss';
  */
 export const Navigation: React.FC = () => {
   const NAVIGATION_STYLES = clsx(styles.navigation);
-  const BUTTON_TILE_STYLES = clsx(styles.button_tile);
+  const BUTTON_WINDOW_STYLES = clsx(styles.button_window);
+  const BUTTON_WINDOW_ACTIVE_STYLES = clsx(styles.button_window, styles.active);
   const BUTTON_LIST_STYLES = clsx(styles.button_list);
+  const BUTTON_LIST_ACTIVE_STYLES = clsx(styles.button_list,styles.active);
+
+
+  const { view, setView }: StoreInterface = useContext(BookContext);
+
+  const onClick = (userView: boolean): void => {
+    setView(userView);
+  };
 
   return (
     <div className={NAVIGATION_STYLES}>
       <Search />
       <FilterButton />
-      <button className={BUTTON_TILE_STYLES} type='button' aria-label='Плитка' data-test-id='button-menu-view-window' />
-      <button className={BUTTON_LIST_STYLES} type='button' aria-label='Список' data-test-id='button-menu-view-list' />
+      <button
+        className={view ? BUTTON_WINDOW_ACTIVE_STYLES : BUTTON_WINDOW_STYLES}
+        onClick={() => onClick(true)}
+        type='button'
+        aria-label='Окно'
+        data-test-id='button-menu-view-window'
+      />
+      <button
+        className={view ? BUTTON_LIST_STYLES : BUTTON_LIST_ACTIVE_STYLES}
+        onClick={() => onClick(false)}
+        type='button'
+        aria-label='Список'
+        data-test-id='button-menu-view-list'
+      />
     </div>
   );
 };
