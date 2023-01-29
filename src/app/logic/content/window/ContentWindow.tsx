@@ -1,8 +1,22 @@
 import React from 'react';
 import clsx from 'clsx';
+import BooksDTO from 'src/app/Books.json';
 import { Card } from 'src/app/components/card/Card';
 
 import styles from 'src/app/logic/content/window/ContentWindow.module.scss';
+
+/**
+ * Interface books list
+ */
+export interface BooksInterface {
+  id?: number;
+  title: string;
+  author: string;
+  year: string;
+  url: string;
+  raiting: string;
+  booking: string;
+}
 
 /**
  * Content window component
@@ -14,14 +28,18 @@ export const ContentWindow: React.FC = () => {
   return (
     <section className={CONTAINER_STYLES}>
       <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {BooksDTO &&
+        BooksDTO.map((book: BooksInterface) => (
+          <Card
+            key={book.id}
+            title={book.title}
+            author={book.author}
+            year={book.year}
+            url={book.url}
+            raiting={book.raiting}
+            booking={book.booking}
+          />
+        ))}
     </section>
   );
 };

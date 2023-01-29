@@ -41,8 +41,17 @@ $smal-inactive: #a7a7a7;
   color: $smal-inactive;
 }
 
-.title {
+.text {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 16px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
   width: 174px;
   height: 54px;
 }
@@ -52,27 +61,25 @@ $smal-inactive: #a7a7a7;
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: $primary;
-  display: -webkit-box;
+  display: -webkit-inline-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  vertical-align: middle;
 }
 
 .author {
   width: 174px;
-  height: 18px;
-  margin-top: 8px;
-}
-
-.author span {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.125rem;
   color: #727272;
 }
 
-.button {
-  margin: 28px auto 0px;
+.button,
+.active,
+.booked {
+  margin: 19px auto 0px;
   width: 166px;
   height: 40px;
   background: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
@@ -89,8 +96,15 @@ $smal-inactive: #a7a7a7;
   cursor: pointer;
 }
 
-.button:hover {
+.active {
   background: #ffffff;
   border: 1px solid #bfc4c9;
   color: $primary;
+}
+
+.booked {
+  background: #f9f9fa;
+  border: 1px solid #bfc4c9;
+  color: $smal-inactive;
+  cursor: auto;
 }

@@ -16,3 +16,35 @@ $primary: #363636;
   line-height: 1.5rem;
   color: $primary;
 }
+
+.social ul {
+  display: flex;
+  column-gap: 24px;
+}
+
+.facebook,
+.instagram,
+.vkontakte,
+.linkedin {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.facebook {
+  background-image: url('../../../resources/icon-social-fb.svg');
+}
+.instagram {
+  background-image: url('../../../resources/icon-social-inst.svg');
+}
+.vkontakte {
+  background-image: url('../../../resources/icon-social-vk.svg');
+}
+.linkedin {
+  background-image: url('../../../resources/icon-social-linkedin.svg');
+}

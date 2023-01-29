@@ -8,7 +8,7 @@ import MenuListDTO from 'src/app/MenuList.json';
 import styles from 'src/app/components/menu/Menu.module.scss';
 
 /**
- * Interface data
+ * Interface menu list
  */
 interface MenuListInterface {
   id: number;
