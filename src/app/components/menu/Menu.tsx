@@ -33,7 +33,7 @@ export const Menu: React.FC = () => {
     <nav className={MENU_STYLES}>
       <ul className={LIST_STYLES}>
         <li className={ITEM_STYLES}>
-          <NavLink to='/book/all' className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
+          <NavLink to='/' className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
             Витрина книг
           </NavLink>
         </li>

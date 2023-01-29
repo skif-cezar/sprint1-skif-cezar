@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
 import { Card } from 'src/app/components/card/Card';
 import { BookContext, StoreInterface } from 'src/app/logic/Store';
 
-import styles from 'src/app/logic/content/window/ContentWindow.module.scss';
+import styles from 'src/app/logic/content/Content.module.scss';
 
 /**
  * Interface books list
@@ -22,7 +23,7 @@ export interface BooksInterface {
 /**
  * Content window component
  */
-export const ContentWindow: React.FC = () => {
+export const Content: React.FC = () => {
   const CONTAINER_STYLES = clsx(styles.container);
   const CONTAINER_LIST_STYLES = clsx(styles.container_list);
   const TITLE_HIDDEN_STYLES = clsx(styles.hidden);
@@ -31,19 +32,20 @@ export const ContentWindow: React.FC = () => {
 
   return (
     <section className={view ? CONTAINER_STYLES : CONTAINER_LIST_STYLES}>
-    <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
-    {BooksDTO &&
-      BooksDTO.map((book: BooksInterface) => (
-        <Card
-          key={book.id}
-          title={book.title}
-          author={book.author}
-          year={book.year}
-          url={book.url}
-          rating={book.rating}
-          booking={book.booking}
-        />
-      ))}
-  </section>
+      <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
+      {BooksDTO &&
+        BooksDTO.map((book: BooksInterface) => (
+          <NavLink to='/book-page' key={book.id}>
+            <Card
+              title={book.title}
+              author={book.author}
+              year={book.year}
+              url={book.url}
+              rating={book.rating}
+              booking={book.booking}
+            />
+          </NavLink>
+        ))}
+    </section>
   );
 };

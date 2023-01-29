@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import clsx from 'clsx';
-import { BooksInterface } from 'src/app/logic/content/window/ContentWindow';
+import { Button } from 'src/app/components/button/Button';
+import { BooksInterface } from 'src/app/logic/content/Content';
 import { BookContext, StoreInterface } from 'src/app/logic/Store';
 import bookUrl from 'src/resources/book.jpg';
 import bookNotUrl from 'src/resources/book-not.jpg';
@@ -18,9 +19,6 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
   const TEXT_STYLES = clsx(styles.text);
   const TITLE_STYLES = clsx(styles.title);
   const AUTHOR_STYLES = clsx(styles.author);
-  const BUTTON_STYLES = clsx(styles.button);
-  const BUTTON_ACTIVE_STYLES = clsx(styles.active);
-  const BUTTON_BOOKED_STYLES = clsx(styles.booked);
 
   const CARD_LIST_STYLES = clsx(styles.card_list);
   const IMG_LIST_STYLES = clsx(styles.image_list);
@@ -30,24 +28,7 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
   const TITLE_LIST_STYLES = clsx(styles.title_list);
   const AUTHOR_LIST_STYLES = clsx(styles.author_list);
 
-  const [isOnToggle, setIsOnToggle] = useState(true);
   const { view }: StoreInterface = useContext(BookContext);
-
-  const onClick = () => {
-    setIsOnToggle(!isOnToggle);
-  };
-
-  const isBooking = (booking: string) => {
-    if (booking === '') {
-      if (isOnToggle) {
-        return BUTTON_STYLES;
-      }
-
-      return BUTTON_ACTIVE_STYLES;
-    }
-
-    return BUTTON_BOOKED_STYLES;
-  };
 
   return (
     <div className={view ? CARD_STYLES : CARD_LIST_STYLES}>
@@ -71,9 +52,7 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
           </div>
           <div className={view ? AUTHOR_STYLES : AUTHOR_LIST_STYLES}>{`${props.author}, ${props.year}`}</div>
         </div>
-        <button className={isBooking(props.booking)} onClick={onClick} type='button'>
-          {props.booking === '' ? 'Забронировать' : `Занята до ${props.booking}`}
-        </button>
+        <Button text={props.booking} />
       </div>
     </div>
   );
