@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
+import BooksDTO from 'src/app/Books.json';
 import { Button } from 'src/app/components/button/Button';
 import { Header } from 'src/app/components/header/Header';
+import { BooksInterface } from 'src/app/logic/content/Content';
 import { Footer } from 'src/app/logic/footer/Footer';
 import bookUrl from 'src/resources/book.jpg';
 import bookNotUrl from 'src/resources/book-not.jpg';
@@ -29,8 +31,9 @@ export const BookPage: React.FC = () => {
   const DESCRIPTION_STYLES = clsx(styles.description);
   const DESCRIPTION_TITLE_STYLES = clsx(styles.description_title);
 
-  const {category} = useParams();
-  const {bookId} = useParams();
+  const {category} = useParams<'category'>();
+  const {bookId} = useParams<'bookId'>();
+  const book = BooksDTO.find((book: BooksInterface) => book.id === parseInt(bookId!, 10));
 
   return (
     <div className={WRAPPER_STYLES}>
@@ -38,8 +41,8 @@ export const BookPage: React.FC = () => {
       <main className={MAIN_STYLES}>
         <div className={NAVIGATION_STYLES}>
           <nav>
-            <NavLink to={`/books/${category}`}>Категория книг</NavLink>
-            <span className={NAV_TITLE_BOOK_STYLES}>Название книги {bookId}</span>
+            <NavLink to={`/books/${category}`}>{category}</NavLink>
+            <span className={NAV_TITLE_BOOK_STYLES}>{book!.title}</span>
           </nav>
         </div>
         <article className={BOOK_CONTAINER_STYLES}>
@@ -57,9 +60,9 @@ export const BookPage: React.FC = () => {
             <div className={BOOK_INFORMATION_STYLES}>
               <div className={TEXT_STYLES}>
                 <div className={TITLE_STYLES}>
-                  <span>Название полное книги</span>
+                  <span>{book!.title}</span>
                 </div>
-                <div className={AUTHOR_STYLES}>Авоторы, 2019</div>
+                <div className={AUTHOR_STYLES}>{`${book!.author}, ${book!.year}`}</div>
               </div>
               <Button text='' />
               <div className={DESCRIPTION_STYLES}>
