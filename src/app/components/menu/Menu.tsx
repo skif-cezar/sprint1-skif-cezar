@@ -14,7 +14,7 @@ interface MenuListInterface {
   id: number;
   title: string;
   amount?: number;
-  url: string;
+  category: string;
 }
 
 /**
@@ -28,6 +28,7 @@ export const Menu: React.FC = () => {
   const SUB_LIST_STYLES = clsx(styles.sub_list);
   const SUB_ITEM_STYLES = clsx(styles.sub_item);
   const SUB_LINK_STYLES = clsx(styles.sub_link);
+  const ACTIVE_SUB_LINK_STYLES = clsx(styles.active_sub_link);
 
   return (
     <nav className={MENU_STYLES}>
@@ -41,7 +42,7 @@ export const Menu: React.FC = () => {
           {MenuListDTO &&
             MenuListDTO.map((list: MenuListInterface) => (
               <li key={list.id} className={SUB_ITEM_STYLES}>
-                <NavLink to={`/books/${list.url}`} className={SUB_LINK_STYLES}>
+                <NavLink to={`/books/${list.category}`} className={({ isActive }) => (isActive ? ACTIVE_SUB_LINK_STYLES : SUB_LINK_STYLES)}>
                   <span>{list.title}</span>&nbsp;<small>{list.amount}</small>
                 </NavLink>
               </li>

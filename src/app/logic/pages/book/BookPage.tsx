@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import { Button } from 'src/app/components/button/Button';
 import { Header } from 'src/app/components/header/Header';
@@ -8,6 +8,8 @@ import bookUrl from 'src/resources/book.jpg';
 import bookNotUrl from 'src/resources/book-not.jpg';
 
 import styles from 'src/app/logic/pages/book/BookPage.module.scss';
+
+export const BOOK_PAGE_URL = '/books/:category/:bookId';
 
 /**
  * Book page component
@@ -27,14 +29,17 @@ export const BookPage: React.FC = () => {
   const DESCRIPTION_STYLES = clsx(styles.description);
   const DESCRIPTION_TITLE_STYLES = clsx(styles.description_title);
 
+  const {category} = useParams();
+  const {bookId} = useParams();
+
   return (
     <div className={WRAPPER_STYLES}>
       <Header />
       <main className={MAIN_STYLES}>
         <div className={NAVIGATION_STYLES}>
           <nav>
-            <NavLink to='/'>Категория книг</NavLink>
-            <span className={NAV_TITLE_BOOK_STYLES}>Название книги</span>
+            <NavLink to={`/books/${category}`}>Категория книг</NavLink>
+            <span className={NAV_TITLE_BOOK_STYLES}>Название книги {bookId}</span>
           </nav>
         </div>
         <article className={BOOK_CONTAINER_STYLES}>

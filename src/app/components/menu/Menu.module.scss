@@ -68,7 +68,7 @@ $smal-inactive: #a7a7a7;
   padding: 0 4px;
 }
 
-.sub_item:hover .sub_link span {
+.active_sub_link span {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -78,7 +78,7 @@ $smal-inactive: #a7a7a7;
   background-clip: text;
 }
 
-.sub_item:hover .sub_link small {
+.active_sub_link small {
   color: $primary;
 }
 
