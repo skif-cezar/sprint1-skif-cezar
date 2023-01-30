@@ -1,0 +1,40 @@
+.review {
+  margin-bottom: 42px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 24px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.name,
+.date {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #727272;
+}
+
+.rating {
+  margin-top: 20px;
+}
+
+.feedback {
+  margin-top: 19px;
+}
+
+.feedback p {
+  width: 100%;
+  max-width: 730px;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #363636;
+}

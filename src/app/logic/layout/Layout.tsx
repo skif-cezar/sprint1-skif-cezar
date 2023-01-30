@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import { Header } from 'src/app/components/header/Header';
 import { Menu } from 'src/app/components/menu/Menu';
-import { Navigation } from 'src/app/components/navigation/Navigation';
 import { Footer } from 'src/app/logic/footer/Footer';
 import { MainLayout } from 'src/app/logic/main/MainLayout';
 
@@ -19,7 +18,6 @@ export const Layout: React.FC = () => {
     <div className={WRAPPER_STYLES}>
       <Header />
       <Menu />
-      <Navigation />
       <main className={MAIN_STYLES}>
         <MainLayout />
       </main>

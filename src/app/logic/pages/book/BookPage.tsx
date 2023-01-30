@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
 import { Button } from 'src/app/components/button/Button';
 import { Header } from 'src/app/components/header/Header';
+import { Review } from 'src/app/components/review/Review';
 import { BooksInterface } from 'src/app/logic/content/Content';
 import { Footer } from 'src/app/logic/footer/Footer';
 import bookUrl from 'src/resources/book.jpg';
@@ -25,7 +26,6 @@ export const BookPage: React.FC = () => {
   const PROMO_STYLES = clsx(styles.promo);
   const IMG_STYLES = clsx(styles.image);
   const BOOK_INFORMATION_STYLES = clsx(styles.information);
-  const TEXT_STYLES = clsx(styles.text);
   const TITLE_BOOK_STYLES = clsx(styles.title);
   const AUTHOR_STYLES = clsx(styles.author);
   const DESCRIPTION_STYLES = clsx(styles.description);
@@ -36,6 +36,7 @@ export const BookPage: React.FC = () => {
   const DETAILS_CONTAINER = clsx(styles.details_container);
   const GROUP_ONE = clsx(styles.group_one);
   const GROUP_TWO = clsx(styles.group_two);
+  const REVIEWS_STYLES = clsx(styles.reviews);
 
   const { category } = useParams<'category'>();
   const { bookId } = useParams<'bookId'>();
@@ -64,7 +65,7 @@ export const BookPage: React.FC = () => {
               />
             </div>
             <div className={BOOK_INFORMATION_STYLES}>
-              <div className={TEXT_STYLES}>
+              <div>
                 <div className={TITLE_BOOK_STYLES}>
                   <span>{book!.title}</span>
                 </div>
@@ -134,6 +135,26 @@ export const BookPage: React.FC = () => {
                 </div>
               </div>
             </div>
+          </article>
+          <article className={REVIEWS_STYLES}>
+            <h3 className={DESCRIPTION_TITLE_STYLES}>
+              Отзывы<span>2</span>
+            </h3>
+            <Review name='Иван Иванов' date='5 января 2019' />
+            <Review
+              name='Николай Качков'
+              date='20 июня 2018'
+              feedback='Учитывая ключевые сценарии поведения, курс на социально-ориентированный национальный проект не оставляет шанса
+          для анализа существующих паттернов поведения. Для современного мира внедрение современных методик
+          предоставляет широкие возможности для позиций, занимаемых участниками в отношении поставленных задач. Как уже
+          неоднократно упомянуто, сделанные на базе интернет-аналитики выводы будут в равной степени предоставлены сами
+          себе. Вот вам яркий пример современных тенденций — глубокий уровень погружения создаёт предпосылки для
+          своевременного выполнения сверхзадачи. И нет сомнений, что акционеры крупнейших компаний, инициированные
+          исключительно синтетически, превращены в посмешище, хотя само их существование приносит несомненную пользу
+          обществу.'
+            />
+            <Review name='Екатерина Беляева' date='18 февраля 2018' />
+            <Button text='Оценить книгу' />
           </article>
         </section>
       </main>

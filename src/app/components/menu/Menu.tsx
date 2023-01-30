@@ -49,12 +49,12 @@ export const Menu: React.FC = () => {
             ))}
         </ul>
         <li className={ITEM_STYLES}>
-          <NavLink to={CONTRACT_PAGE_URL} className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
+          <NavLink to={TERMS_PAGE_URL} className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
             Правила пользования
           </NavLink>
         </li>
         <li className={ITEM_STYLES}>
-          <NavLink to={TERMS_PAGE_URL} className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
+          <NavLink to={CONTRACT_PAGE_URL} className={({ isActive }) => (isActive ? ACTIVE_LINK_STYLES : undefined)}>
             Договор оферты
           </NavLink>
         </li>

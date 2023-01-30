@@ -83,15 +83,13 @@
   width: 635px;
 }
 
-.information button {
+.information button,
+.reviews button {
   margin-top: 32px;
   width: 350px;
   height: 52px;
   border-radius: 30px;
   font-size: 1rem;
-}
-
-.text {
 }
 
 .title span {
@@ -195,4 +193,24 @@
 
 .group_two > div {
   column-gap: 72px;
+}
+
+.reviews {
+  margin-top: 62px;
+}
+
+.description_title > span {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #a7a7a7;
+  padding-left: 6px;
+}
+
+.reviews .description_title {
+  margin-bottom: 16px;
+}
+
+.reviews button {
+  margin: 0;
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 
 import styles from 'src/app/components/button/Button.module.scss';
@@ -21,7 +21,8 @@ export const Button: React.FC<ButtonInterface> = (props: ButtonInterface) => {
   const [isOnToggle, setIsOnToggle] = useState(true);
   const [isBooked, setIsBooked] = useState('Забронировать');
 
-  const onClick = () => {
+  const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event?.stopPropagation();
     setIsOnToggle(!isOnToggle);
 
     if (!isOnToggle) {

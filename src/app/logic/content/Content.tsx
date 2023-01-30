@@ -3,6 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
 import { Card } from 'src/app/components/card/Card';
+import { Navigation } from 'src/app/components/navigation/Navigation';
 import { BookContext, StoreInterface } from 'src/app/logic/Store';
 
 import styles from 'src/app/logic/content/Content.module.scss';
@@ -32,21 +33,24 @@ export const Content: React.FC = () => {
   const { category } = useParams();
 
   return (
-    <section className={view ? CONTAINER_STYLES : CONTAINER_LIST_STYLES}>
-      <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
-      {BooksDTO &&
-        BooksDTO.map((book: BooksInterface) => (
-          <NavLink to={`/books/${category}/${book.id}`} key={book.id} data-test-id='card'>
-            <Card
-              title={book.title}
-              author={book.author}
-              year={book.year}
-              url={book.url}
-              rating={book.rating}
-              booking={book.booking}
-            />
-          </NavLink>
-        ))}
-    </section>
+    <React.Fragment>
+      <Navigation />
+      <section className={view ? CONTAINER_STYLES : CONTAINER_LIST_STYLES}>
+        <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
+        {BooksDTO &&
+          BooksDTO.map((book: BooksInterface) => (
+            <NavLink to={`/books/${category}/${book.id}`} key={book.id} data-test-id='card'>
+              <Card
+                title={book.title}
+                author={book.author}
+                year={book.year}
+                url={book.url}
+                rating={book.rating}
+                booking={book.booking}
+              />
+            </NavLink>
+          ))}
+      </section>
+    </React.Fragment>
   );
 };
