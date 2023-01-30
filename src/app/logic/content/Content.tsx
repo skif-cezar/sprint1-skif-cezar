@@ -29,14 +29,14 @@ export const Content: React.FC = () => {
   const TITLE_HIDDEN_STYLES = clsx(styles.hidden);
 
   const { view }: StoreInterface = useContext(BookContext);
-  const {category} = useParams();
+  const { category } = useParams();
 
   return (
     <section className={view ? CONTAINER_STYLES : CONTAINER_LIST_STYLES}>
       <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
       {BooksDTO &&
         BooksDTO.map((book: BooksInterface) => (
-          <NavLink to={`/books/${category}/${book.id}`} key={book.id}>
+          <NavLink to={`/books/${category}/${book.id}`} key={book.id} data-test-id='card'>
             <Card
               title={book.title}
               author={book.author}
