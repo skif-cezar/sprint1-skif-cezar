@@ -10,7 +10,7 @@ import styles from 'src/app/components/menu/Menu.module.scss';
 /**
  * Interface menu list
  */
-interface MenuListInterface {
+export interface MenuListInterface {
   id: number;
   title: string;
   amount?: number;

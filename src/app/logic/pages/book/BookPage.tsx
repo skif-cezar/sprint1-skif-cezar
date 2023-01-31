@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
+import MenuListDTO from 'src/app/MenuList.json';
 import { Button } from 'src/app/components/button/Button';
 import { Header } from 'src/app/components/header/Header';
 import { Review } from 'src/app/components/review/Review';
@@ -11,6 +12,7 @@ import bookUrl from 'src/resources/book.jpg';
 import bookNotUrl from 'src/resources/book-not.jpg';
 
 import styles from 'src/app/logic/pages/book/BookPage.module.scss';
+import { MenuListInterface } from 'src/app/components/menu/Menu';
 
 export const BOOK_PAGE_URL = '/books/:category/:bookId';
 
@@ -41,6 +43,7 @@ export const BookPage: React.FC = () => {
   const { category } = useParams<'category'>();
   const { bookId } = useParams<'bookId'>();
   const book = BooksDTO.find((book: BooksInterface) => book.id === parseInt(bookId!, 10));
+  const menuItem = MenuListDTO.find((menuItem: MenuListInterface) => menuItem.category === category);
 
   return (
     <div className={WRAPPER_STYLES}>
@@ -48,7 +51,7 @@ export const BookPage: React.FC = () => {
       <main className={MAIN_STYLES}>
         <div className={NAVIGATION_STYLES}>
           <nav>
-            <NavLink to={`/books/${category}`}>{category}</NavLink>
+            <NavLink to={`/books/${category}`}>{menuItem!.title}</NavLink>
             <span className={NAV_TITLE_BOOK_STYLES}>{book!.title}</span>
           </nav>
         </div>
