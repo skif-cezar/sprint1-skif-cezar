@@ -34,3 +34,9 @@
   background: transparent url('../../../resources/icon-action.svg') no-repeat center;
   cursor: pointer;
 }
+
+@media (max-width: 992.02px) {
+  .search {
+    width: 274px;
+  }
+}

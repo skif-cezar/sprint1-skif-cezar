@@ -50,3 +50,9 @@ $primary: #363636;
 .linkedin {
   background-image: url('../../../resources/icon-social-linkedin.svg');
 }
+
+@media (max-width: 992.02px) {
+  .footer {
+    max-width: 640px;
+  }
+}
