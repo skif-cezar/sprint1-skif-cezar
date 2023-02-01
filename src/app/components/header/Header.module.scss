@@ -22,6 +22,9 @@
   width: 32px;
   height: 32px;
   background-image: url('../../../resources/icon-burger-menu.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -56,7 +59,28 @@
   border-radius: 50%;
 }
 
-@media (max-width: 992.02px) {
+@media (max-width: 576.02px) {
+  .header {
+    margin: 0 auto;
+    height: 76px;
+    padding: 24px 0px;
+  }
+  .logo,
+  .authorization {
+    display: none;
+  }
+  .title {
+    font-size: 1.125rem;
+    margin: 0px 0px 0px 24px;
+  }
+  .burger_menu {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 576.02px) and (max-width: 992.02px) {
   .header {
     max-width: 640px;
     margin: 0 auto;

@@ -56,3 +56,22 @@ $primary: #363636;
     max-width: 640px;
   }
 }
+
+@media (max-width: 576.02px) {
+  .footer {
+    flex-direction: column;
+  }
+  .company {
+    width: 230px;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .company span {
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+  }
+  .social {
+    margin-top: 16px;
+  }
+}

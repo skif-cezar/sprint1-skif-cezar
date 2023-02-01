@@ -3,6 +3,7 @@ $smal-inactive: #a7a7a7;
 
 /* Window cards styles */
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -22,8 +23,7 @@ $smal-inactive: #a7a7a7;
 }
 
 .image {
-  margin: 0 auto;
-  margin-top: 8px;
+  margin: 8px auto 0px;
   width: 174px;
   height: 242px;
   border-radius: 10px;
@@ -172,8 +172,8 @@ $smal-inactive: #a7a7a7;
 
 @media (max-width: 992.02px) {
   .text {
-    height: 71px;
     margin-top: 25px;
+    height: 71px;
   }
   .title span,
   .author {
@@ -192,5 +192,47 @@ $smal-inactive: #a7a7a7;
   }
   .content button {
     margin: 28px auto 0px;
+  }
+}
+
+@media (max-width: 576.02px) {
+  .card {
+    width: 288px;
+  }
+  .content {
+    width: 256px;
+  }
+  .text {
+    margin-top: 16px;
+    height: auto;
+  }
+  .title {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+  }
+  .title span {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    -webkit-line-clamp: 3;
+  }
+  .author {
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    -webkit-line-clamp: 2;
+  }
+  .content button {
+    margin: 0 auto;
+    position: absolute;
+    bottom: 16px;
+    width: 256px;
+    height: 40px;
+    border-radius: 20px;
   }
 }

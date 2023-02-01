@@ -43,3 +43,21 @@
   }
 }
 
+@media (max-width: 960.02px) {
+  .container {
+    column-gap: 20px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 576.02px) {
+  .container {
+    margin-top: 19px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}

@@ -25,19 +25,26 @@
   padding-bottom: 62px;
 }
 
-@media (max-width: 575.98px) {
-}
-
 @media (max-width: 992.02px) {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-    'header'
-    'main'
-    'footer';
+      'header'
+      'main'
+      'footer';
   }
   .main {
     max-width: 640px;
     margin: 30px auto 0px;
+  }
+}
+
+@media (max-width: 576.02px) {
+  .wrapper {
+    grid-template-rows: 76px 1fr 104px;
+    padding: 0 16px;
+  }
+  .main {
+    margin: 11px auto 0px;
   }
 }
