@@ -29,6 +29,11 @@ $smal-inactive: #a7a7a7;
   border-radius: 10px;
 }
 
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
 .content {
   margin: 0 auto;
 }
@@ -103,6 +108,8 @@ $smal-inactive: #a7a7a7;
 .image_list img {
   border: 1px solid $smal-inactive;
   border-radius: 3px;
+  width: 100%;
+  height: 100%;
 }
 
 .content_list {

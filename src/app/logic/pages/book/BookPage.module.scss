@@ -137,7 +137,13 @@
   margin-top: 18px;
 }
 
+.rating_content > div {
+  width: 168px;
+  column-gap: 16px;
+}
+
 .rating_content span {
+  margin-left: 24px;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -212,5 +218,19 @@
 }
 
 .reviews button {
-  margin: 0;
+  margin: 0 auto;
+  width: 350px;
+  height: 52px;
+  background: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Rating } from 'src/app/components/rating/Rating';
 import avatarUrl from 'src/resources/avatar-reviews.jpg';
 import bookNotUrl from 'src/resources/book-not.jpg';
 
@@ -46,7 +47,9 @@ export const Review: React.FC<ReviewInterface> = (props: ReviewInterface) => {
           <time dateTime='2019-01-05'>{props.date}</time>
         </div>
       </div>
-      <div className={RATING_STYLES}>Rating</div>
+      <div className={RATING_STYLES}>
+        <Rating ratingValue='4' idValue={4} />
+      </div>
       <div className={FEEDBACK_STYLES}>
         <p>{props.feedback}</p>
       </div>

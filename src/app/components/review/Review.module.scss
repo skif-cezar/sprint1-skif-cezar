@@ -23,7 +23,12 @@
 }
 
 .rating {
-  margin-top: 20px;
+  margin-top: 16px;
+}
+
+.rating > div {
+  width: 168px;
+  column-gap: 16px;
 }
 
 .feedback {

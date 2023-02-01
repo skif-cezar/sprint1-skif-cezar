@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import clsx from 'clsx';
 import { Button } from 'src/app/components/button/Button';
+import { Rating } from 'src/app/components/rating/Rating';
 import { BooksInterface } from 'src/app/logic/content/Content';
 import { BookContext, StoreInterface } from 'src/app/logic/Store';
 import bookUrl from 'src/resources/book.jpg';
@@ -43,8 +44,12 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
         />
       </div>
       <div className={view ? CONTENT_STYLES : CONTENT_LIST_STYLES}>
-        <div className={view ? RATING_STYLES : RATING_LIST_STYLES}>
-          {props.rating === '' ? 'ещё нет оценок' : props.rating}
+        <div
+          className={view ? RATING_STYLES : RATING_LIST_STYLES}
+          onClick={(event) => event.stopPropagation()}
+          aria-hidden='true'
+        >
+          {props.rating === '' ? 'ещё нет оценок' : <Rating ratingValue={props.rating} idValue={props.id} />}
         </div>
         <div className={view ? TEXT_STYLES : TEXT_LIST_STYLES}>
           <div className={view ? TITLE_STYLES : TITLE_LIST_STYLES}>

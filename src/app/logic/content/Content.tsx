@@ -12,7 +12,7 @@ import styles from 'src/app/logic/content/Content.module.scss';
  * Interface books list
  */
 export interface BooksInterface {
-  id?: number;
+  id: number;
   title: string;
   author: string;
   year: string;
@@ -41,6 +41,7 @@ export const Content: React.FC = () => {
           BooksDTO.map((book: BooksInterface) => (
             <NavLink to={`/books/${category}/${book.id}`} key={book.id} data-test-id='card'>
               <Card
+                id={book.id}
                 title={book.title}
                 author={book.author}
                 year={book.year}

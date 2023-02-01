@@ -13,6 +13,7 @@ import bookNotUrl from 'src/resources/book-not.jpg';
 
 import styles from 'src/app/logic/pages/book/BookPage.module.scss';
 import { MenuListInterface } from 'src/app/components/menu/Menu';
+import { Rating } from 'src/app/components/rating/Rating';
 
 export const BOOK_PAGE_URL = '/books/:category/:bookId';
 
@@ -90,7 +91,7 @@ export const BookPage: React.FC = () => {
           <article className={RATING_STYLES}>
             <h3 className={DESCRIPTION_TITLE_STYLES}>Рейтинг</h3>
             <div className={RATING_CONTENT_STYLES}>
-              <div>Rating</div>
+              <Rating ratingValue={book!.rating} idValue={book!.id} />
               <span>4.3</span>
             </div>
           </article>
@@ -157,7 +158,7 @@ export const BookPage: React.FC = () => {
           обществу.'
             />
             <Review name='Екатерина Беляева' date='18 февраля 2018' />
-            <Button text='Оценить книгу' />
+            <button type='button'>Оценить книгу</button>
           </article>
         </section>
       </main>
