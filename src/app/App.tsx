@@ -28,5 +28,3 @@ export const App: React.FC = () => (
     </HashRouter>
   </BookProvider>
 );
-/* <Route path='/' element={<Content />} />
-            <Route path='/books/all' element={<Navigate to='/' />} /> */

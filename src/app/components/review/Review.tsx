@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { Rating } from 'src/app/components/rating/Rating';
 import avatarUrl from 'src/resources/avatar-reviews.jpg';
-import bookNotUrl from 'src/resources/book-not.jpg';
+import bookNotUrl from 'src/resources/book-not.svg';
 
 import styles from 'src/app/components/review/Review.module.scss';
 

@@ -2,18 +2,18 @@ import React from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
-import MenuListDTO from 'src/app/MenuList.json';
 import { Button } from 'src/app/components/button/Button';
 import { Header } from 'src/app/components/header/Header';
+import { MenuListInterface } from 'src/app/components/menu/Menu';
+import { Rating } from 'src/app/components/rating/Rating';
 import { Review } from 'src/app/components/review/Review';
 import { BooksInterface } from 'src/app/logic/content/Content';
 import { Footer } from 'src/app/logic/footer/Footer';
+import MenuListDTO from 'src/app/MenuList.json';
 import bookUrl from 'src/resources/book.jpg';
-import bookNotUrl from 'src/resources/book-not.jpg';
+import bookNotUrl from 'src/resources/book-not.svg';
 
 import styles from 'src/app/logic/pages/book/BookPage.module.scss';
-import { MenuListInterface } from 'src/app/components/menu/Menu';
-import { Rating } from 'src/app/components/rating/Rating';
 
 export const BOOK_PAGE_URL = '/books/:category/:bookId';
 
@@ -24,10 +24,10 @@ export const BookPage: React.FC = () => {
   const WRAPPER_STYLES = clsx(styles.wrapper);
   const MAIN_STYLES = clsx(styles.main);
   const NAVIGATION_STYLES = clsx(styles.navigation);
-  const NAV_TITLE_BOOK_STYLES = clsx(styles.nav_title);
   const BOOK_CONTAINER_STYLES = clsx(styles.container);
   const PROMO_STYLES = clsx(styles.promo);
   const IMG_STYLES = clsx(styles.image);
+  const IMG_ERROR_STYLES = clsx(styles.image_error);
   const BOOK_INFORMATION_STYLES = clsx(styles.information);
   const TITLE_BOOK_STYLES = clsx(styles.title);
   const AUTHOR_STYLES = clsx(styles.author);
@@ -41,8 +41,8 @@ export const BookPage: React.FC = () => {
   const GROUP_TWO = clsx(styles.group_two);
   const REVIEWS_STYLES = clsx(styles.reviews);
 
-  const { category } = useParams<'category'>();
-  const { bookId } = useParams<'bookId'>();
+  const { category } = useParams();
+  const { bookId } = useParams();
   const book = BooksDTO.find((book: BooksInterface) => book.id === parseInt(bookId!, 10));
   const menuItem = MenuListDTO.find((menuItem: MenuListInterface) => menuItem.category === category);
 
@@ -52,19 +52,28 @@ export const BookPage: React.FC = () => {
       <main className={MAIN_STYLES}>
         <div className={NAVIGATION_STYLES}>
           <nav>
-            <NavLink to={`/books/${category}`}>{menuItem!.title}</NavLink>
-            <span className={NAV_TITLE_BOOK_STYLES}>{book!.title}</span>
+            <ul>
+              <li>
+                <NavLink to={`/books/${category}`}>{menuItem!.title}</NavLink>
+              </li>
+              <li>
+                <NavLink to={`/books/${category}/${book!.id}`}>
+                  {book!.title}
+                </NavLink>
+              </li>
+            </ul>
           </nav>
         </div>
         <section className={BOOK_CONTAINER_STYLES}>
           <article className={PROMO_STYLES}>
             <div className={IMG_STYLES}>
               <img
-                alt=''
+                alt={book!.title}
                 src={bookUrl}
                 onError={(e) => {
                   e.currentTarget.onerror = null;
                   e.currentTarget.src = bookNotUrl;
+                  e.currentTarget.classList.add(IMG_ERROR_STYLES);
                 }}
               />
             </div>
@@ -76,16 +85,16 @@ export const BookPage: React.FC = () => {
                 <div className={AUTHOR_STYLES}>{`${book!.author}, ${book!.year}`}</div>
               </div>
               <Button text='' />
-              <div className={DESCRIPTION_STYLES}>
-                <h3 className={DESCRIPTION_TITLE_STYLES}>О книге</h3>
-                <p>
-                  Алгоритмы — это всего лишь пошаговые алгоритмы решения задач, и большинство таких задач уже были
-                  кем-то решены, протестированы и проверены. Можно, конечно, погрузится в глубокую философию гениального
-                  Кнута, изучить многостраничные фолианты с доказательствами и обоснованиями, но хотите ли вы тратить на
-                  это свое время? Откройте великолепно иллюстрированную книгу и вы сразу поймете, что алгоритмы — это
-                  просто. А грокать алгоритмы — это веселое и увлекательное занятие.
-                </p>
-              </div>
+            </div>
+            <div className={DESCRIPTION_STYLES}>
+              <h3 className={DESCRIPTION_TITLE_STYLES}>О книге</h3>
+              <p>
+                Алгоритмы — это всего лишь пошаговые алгоритмы решения задач, и большинство таких задач уже были кем-то
+                решены, протестированы и проверены. Можно, конечно, погрузится в глубокую философию гениального Кнута,
+                изучить многостраничные фолианты с доказательствами и обоснованиями, но хотите ли вы тратить на это свое
+                время? Откройте великолепно иллюстрированную книгу и вы сразу поймете, что алгоритмы — это просто. А
+                грокать алгоритмы — это веселое и увлекательное занятие.
+              </p>
             </div>
           </article>
           <article className={RATING_STYLES}>

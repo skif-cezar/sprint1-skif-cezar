@@ -5,7 +5,7 @@ import { Rating } from 'src/app/components/rating/Rating';
 import { BooksInterface } from 'src/app/logic/content/Content';
 import { BookContext, StoreInterface } from 'src/app/logic/Store';
 import bookUrl from 'src/resources/book.jpg';
-import bookNotUrl from 'src/resources/book-not.jpg';
+import bookNotUrl from 'src/resources/book-not.svg';
 
 import styles from 'src/app/components/card/Card.module.scss';
 
@@ -15,6 +15,7 @@ import styles from 'src/app/components/card/Card.module.scss';
 export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
   const CARD_STYLES = clsx(styles.card);
   const IMG_STYLES = clsx(styles.image);
+  const IMG_ERROR_STYLES = clsx(styles.image_error);
   const CONTENT_STYLES = clsx(styles.content);
   const RATING_STYLES = clsx(styles.rating);
   const TEXT_STYLES = clsx(styles.text);
@@ -40,6 +41,7 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
           onError={(e) => {
             e.currentTarget.onerror = null;
             e.currentTarget.src = bookNotUrl;
+            e.currentTarget.classList.add(IMG_ERROR_STYLES);
           }}
         />
       </div>
