@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import clsx from 'clsx';
 import { FilterButton } from 'src/app/components/filter/filter-button';
-import { Search } from 'src/app/components/search/search';
-import { BookContext, StoreInterface } from 'src/app/logic/store';
+import { Search } from 'src/app/components/search/search-component';
+import { BookContext, StoreInterface } from 'src/app/logic/store-book';
 
 import styles from 'src/app/components/navigation/Navigation.module.scss';
 

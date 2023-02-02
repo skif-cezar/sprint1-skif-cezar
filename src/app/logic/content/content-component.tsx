@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
 import { Card } from 'src/app/components/card/card-component';
 import { Navigation } from 'src/app/components/navigation/navigation-component';
-import { BookContext, StoreInterface } from 'src/app/logic/store';
+import { BookContext, StoreInterface } from 'src/app/logic/store-book';
 
 import styles from 'src/app/logic/content/Content.module.scss';
 
