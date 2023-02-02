@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Rating } from 'src/app/components/rating/Rating';
+import { Rating } from 'src/app/components/rating/rating';
 import avatarUrl from 'src/resources/avatar-reviews.jpg';
 import bookNotUrl from 'src/resources/book-not.svg';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { StarButton } from 'src/app/components/radio-button/StarButton';
+import { StarButton } from 'src/app/components/radio-button/star-button';
 
 import styles from 'src/app/components/rating/Rating.module.scss';
 

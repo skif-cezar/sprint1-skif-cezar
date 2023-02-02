@@ -1,9 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Header } from 'src/app/components/header/Header';
-import { Menu } from 'src/app/components/menu/Menu';
-import { Footer } from 'src/app/logic/footer/Footer';
-import { MainLayout } from 'src/app/logic/main/MainLayout';
+import { Header } from 'src/app/components/header/header';
+import { Menu } from 'src/app/components/menu/menu';
+import { Footer } from 'src/app/logic/footer/footer';
+import { MainLayout } from 'src/app/logic/main/main-layout';
 
 import styles from 'src/app/logic/layout/Layout.module.scss';
 
