@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import clsx from 'clsx';
-import { Button } from 'src/app/components/button/button';
+import { Button } from 'src/app/components/button/button-component';
 import { Rating } from 'src/app/components/rating/rating';
-import { BooksInterface } from 'src/app/logic/content/content';
+import { BooksInterface } from 'src/app/logic/content/content-component';
 import { BookContext, StoreInterface } from 'src/app/logic/store';
 import bookUrl from 'src/resources/book.jpg';
 import bookNotUrl from 'src/resources/book-not.svg';

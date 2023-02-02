@@ -1,11 +1,11 @@
 import React from 'react';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { Content } from 'src/app/logic/content/content';
-import { Layout } from 'src/app/logic/layout/layout';
+import { Content } from 'src/app/logic/content/content-component';
+import { Layout } from 'src/app/logic/layout/layout-component';
 import { MainLayout } from 'src/app/logic/main/main-layout';
 import { BOOK_PAGE_URL,BookPage } from 'src/app/logic/pages/book/book-page';
-import { Contract, CONTRACT_PAGE_URL } from 'src/app/logic/pages/contract/contract';
-import { Terms, TERMS_PAGE_URL } from 'src/app/logic/pages/terms/terms';
+import { Contract, CONTRACT_PAGE_URL } from 'src/app/logic/pages/contract/contract-page';
+import { Terms, TERMS_PAGE_URL } from 'src/app/logic/pages/terms/terms-page';
 import { BookProvider } from 'src/app/logic/store';
 
 /**

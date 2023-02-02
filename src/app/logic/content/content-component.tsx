@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import clsx from 'clsx';
 import BooksDTO from 'src/app/Books.json';
-import { Card } from 'src/app/components/card/card';
-import { Navigation } from 'src/app/components/navigation/navigation';
+import { Card } from 'src/app/components/card/card-component';
+import { Navigation } from 'src/app/components/navigation/navigation-component';
 import { BookContext, StoreInterface } from 'src/app/logic/store';
 
 import styles from 'src/app/logic/content/Content.module.scss';

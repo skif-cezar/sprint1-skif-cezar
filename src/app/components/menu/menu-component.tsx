@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
-import { CONTRACT_PAGE_URL } from 'src/app/logic/pages/contract/contract';
-import { TERMS_PAGE_URL } from 'src/app/logic/pages/terms/terms';
+import { CONTRACT_PAGE_URL } from 'src/app/logic/pages/contract/contract-page';
+import { TERMS_PAGE_URL } from 'src/app/logic/pages/terms/terms-page';
 import MenuListDTO from 'src/app/MenuList.json';
 
 import styles from 'src/app/components/menu/Menu.module.scss';
