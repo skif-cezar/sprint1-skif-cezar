@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
       <NavLink to='/' className={LOGO_STYLES}>
         <img src={logoSrc} alt='Логотип сайта Cleverland' width={165} height={40} />
       </NavLink>
-      <button className={BURGER_MENU_STYLES} type='button'></button>
+      <button className={BURGER_MENU_STYLES} type='button'>Меню</button>
       <h1 className={TITLE_STYLES}>Библиотека</h1>
       <div className={AUTHORIZATION_STYLES}>
         <span className={WELCOME_STYLES}>Привет, Иван!</span>
