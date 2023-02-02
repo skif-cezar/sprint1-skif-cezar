@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import clsx from 'clsx';
-import { Button } from 'src/app/components/button/Button';
+import { Button } from 'src/app/components/button/button';
 import { Rating } from 'src/app/components/rating/rating';
 import { BooksInterface } from 'src/app/logic/content/content';
 import { BookContext, StoreInterface } from 'src/app/logic/store';
