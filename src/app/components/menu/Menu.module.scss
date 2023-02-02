@@ -1,0 +1,104 @@
+$hover: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+$primary: #363636;
+$smal-inactive: #a7a7a7;
+
+.menu {
+  width: 279px;
+  margin-top: 62px;
+  grid-area: menu;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  cursor: pointer;
+}
+
+.item:not(:nth-child(1)) {
+  margin-top: 42px;
+}
+
+.item:nth-child(1) a {
+  display: block;
+  width: 255px;
+  height: 36px;
+  border-bottom: 1px solid $primary;
+}
+
+.item:nth-child(1):hover a,
+.item:nth-child(1) a.active {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-image: $hover;
+  border-image-slice: 1;
+}
+
+.item:hover {
+  background: $hover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  padding-top: 16px;
+  padding-left: 20px;
+}
+
+.sub_item {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.sub_link {
+  display: block;
+  height: auto;
+  padding: 0 4px;
+}
+
+.active_sub_link span {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  background: $hover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.active_sub_link small {
+  color: $primary;
+}
+
+.sub_link small {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-left: 1.7px;
+  color: $smal-inactive;
+}
+
+.active {
+  background: $hover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 992.02px) {
+  .menu {
+    display: none;
+  }
+}
