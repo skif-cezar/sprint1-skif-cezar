@@ -39,7 +39,7 @@ export const Content: React.FC = () => {
         <h2 className={TITLE_HIDDEN_STYLES}>Витрина книг</h2>
         {BooksDTO &&
           BooksDTO.map((book: BooksInterface) => (
-            <NavLink to={`/books/${category}/${book.id}`} key={book.id} data-test-id='card'>
+            <NavLink to={`/books/${category}/${book.id}`} key={book.id}>
               <Card
                 id={book.id}
                 title={book.title}

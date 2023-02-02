@@ -33,7 +33,7 @@ export const Card: React.FC<BooksInterface> = (props: BooksInterface) => {
   const { view }: StoreInterface = useContext(BookContext);
 
   return (
-    <div className={view ? CARD_STYLES : CARD_LIST_STYLES}>
+    <div className={view ? CARD_STYLES : CARD_LIST_STYLES} data-test-id='card'>
       <div className={view ? IMG_STYLES : IMG_LIST_STYLES}>
         <img
           alt={props.title}
